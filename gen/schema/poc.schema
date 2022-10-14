@@ -1,0 +1,67 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "poc_PERSON",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "PERSON_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "nullable": true,
+                        "name": "PERSON_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "nullable": true,
+                        "name": "PERSON_LASTNAME"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "PERSON_CITIID"
+                    }
+                ]
+            },
+            {
+                "name": "poc_CITY",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CITY_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "nullable": true,
+                        "name": "CITY_NAME"
+                    }
+                ]
+            },
+            {
+                "name": "Person_City",
+                "type": "foreignKey",
+                "table": "poc_PERSON",
+                "constraintName": "Person_City",
+                "columns": "PERSON_CITIID",
+                "referencedTable": "poc_CITY",
+                "referencedColumns": "CITY_ID"
+            }
+        ]
+    }
+}
